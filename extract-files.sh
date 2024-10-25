@@ -40,6 +40,9 @@ function blob_fixup {
             "$PATCHELF" --replace-needed libutils.so libutils-v32.so "$2"
             ;;
         vendor/bin/hw/android.hardware.media.c2@1.2-mediatek|vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
+	    [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "libcodec2_hidl@1.0.so" "${2}"
+            "${PATCHELF}" --add-needed "libshim.so" "${2}"
             "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             ;;
         vendor/bin/mtk_agpsd)

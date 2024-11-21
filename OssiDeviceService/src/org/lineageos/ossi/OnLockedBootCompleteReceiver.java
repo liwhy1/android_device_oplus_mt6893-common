@@ -11,7 +11,6 @@ import android.content.Context;
 
 import android.util.Log;
 
-import org.lineageos.ossi.disablehwoverlays.DisableHWOverlaysService;
 import org.lineageos.ossi.aodhelper.DozeCustomService;
 
 public class OnLockedBootCompleteReceiver extends BroadcastReceiver {
@@ -22,9 +21,6 @@ public class OnLockedBootCompleteReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, Intent intent) {
         Log.i(TAG, "onBoot");
-
-        sIntent = new Intent(context, DisableHWOverlaysService.class);
-        context.startService(sIntent);
 
         sIntent = new Intent(context, DozeCustomService.class);
         context.startService(sIntent);

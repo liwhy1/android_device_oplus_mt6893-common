@@ -25,7 +25,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Call proprietary blob setup
-$(call inherit-product, device/oplus/camera/camera.mk)
 $(call inherit-product, packages/apps/OneplusParts/parts.mk)
 $(call inherit-product-if-exists, packages/apps/PocketMode/pocket_mode.mk)
 
@@ -77,7 +76,6 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libdynproc \
     libhapticgenerator \
-    libstagefright_foundation \
     libaudiospdif
 
 # Audio
@@ -357,10 +355,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     OplusDoze
 
-# MTK InCallService
-PRODUCT_PACKAGES += \
-    MtkInCallService
-
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -428,6 +422,10 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.1.vendor \
     vendor.mediatek.hardware.mtkpower@1.2.vendor
 
+PRODUCT_PACKAGES += \
+    libmtkperf_client_vendor \
+    libmtkperf_client
+
 # Perf
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
@@ -453,10 +451,6 @@ PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
     RcsService \
     PresencePolling
-
-# ImsInit hack
-PRODUCT_PACKAGES += \
-    ImsInit
 
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -531,8 +525,9 @@ PRODUCT_BOOT_JARS += \
     mediatek-framework \
     mediatek-ims-base \
     mediatek-ims-common \
-    mediatek-services \
-    oplus-support-wrapper
+    mediatek-telecom-common \
+    mediatek-telephony-base \
+    mediatek-telephony-common
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -552,18 +547,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.mt6893
 
-# Viper4Android
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/prebuilt/viper/lib/soundfx/libv4a_re.so:$(TARGET_COPY_OUT_VENDOR)/lib/soundfx/libv4a_re.so \
-    $(COMMON_PATH)/prebuilt/viper/lib64/soundfx/libv4a_re.so:$(TARGET_COPY_OUT_VENDOR)/lib/soundfx/libv4a_re.so \
-    $(COMMON_PATH)/prebuilt/viper/etc/audio_effects.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_effects.conf
-
 # VNDK
 PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v32/arm64/arch-arm-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v32.so \
     prebuilts/vndk/v33/arm64/arch-arm-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefright_foundation-v33.so \
-    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v32.so \
+    prebuilts/vndk/v32/arm64/arch-arm-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v32.so \
     prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstagefright_foundation-v33.so \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v32.so \
     prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-core/libcrypto.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcrypto-v32.so \
     prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-core/libssl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libssl-v32.so
 

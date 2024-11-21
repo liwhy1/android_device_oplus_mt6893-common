@@ -37,10 +37,6 @@
 
         <service
             android:directBootAware="true"
-            android:name=".disablehwoverlays.DisableHWOverlaysService" />
-
-        <service
-            android:directBootAware="true"
             android:name=".aodhelper.DozeCustomService" />
 
     </application>

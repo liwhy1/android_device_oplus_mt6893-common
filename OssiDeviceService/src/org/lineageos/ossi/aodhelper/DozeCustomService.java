@@ -24,7 +24,7 @@ import java.util.TimerTask;
 public class DozeCustomService extends Service {
     private static final String TAG = "AODHelperService";
     private static final boolean DEBUG = true;
-    
+
     private static final long dozeInterval = 4000;
 
     private boolean isSensorRunning = false;
@@ -83,14 +83,14 @@ public class DozeCustomService extends Service {
                 SensorManager.SENSOR_DELAY_NORMAL);
         isSensorRunning = true;
     }
-    
+
     private boolean getAodFlag() {
         return Settings.Secure.getInt(mContext.getContentResolver(), Settings.Secure.DOZE_ALWAYS_ON, 0) != 0;
     }
-    
+
     private void startRepeatDozing() {
         if (isTimerRunning) return;
-        
+
         if (DEBUG) Log.d(TAG, "Started doze timer.");
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
@@ -100,22 +100,22 @@ public class DozeCustomService extends Service {
         }, 0, dozeInterval);
         isTimerRunning = true;
     }
-    
+
     private void stopRepeatDozing() {
         if (!isTimerRunning) return;
-        
+
         if (DEBUG) Log.d(TAG, "Stopped doze timer.");
         timer.cancel();
         isTimerRunning = false;
     }
-    
+
     private void pulseDoze() {
         // Pulse it the doze.
         Intent intent = new Intent("com.android.systemui.doze.pulse");
         intent.setPackage("com.android.systemui");
         mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT);
     }
-    
+
     private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -136,13 +136,13 @@ public class DozeCustomService extends Service {
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
             // Method to check accuracy changed in sensor.
         }
-        
+
         @Override
         public void onSensorChanged(SensorEvent event) {
             // Check if the sensor type is proximity sensor.
             if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
                 float distance = event.values[0];
-                
+
                 // Is proximity sensor detecting?
                 if (distance >= proximitySensor.getMaximumRange()) {
                     Log.d(TAG, "Proximity sensor is FAR.");

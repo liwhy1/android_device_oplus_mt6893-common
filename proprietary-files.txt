@@ -705,7 +705,6 @@ vendor/etc/init/vpud.rc
 -vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml
 vendor/etc/mpe.conf
 vendor/etc/mtk_omx_core.cfg
-vendor/etc/mtk_platform_codecs_config.xml
 vendor/lib/AV1SecureVdecCA.so
 vendor/lib/AVCSecureVdecCA.so
 vendor/lib/HEVCSecureVdecCA.so

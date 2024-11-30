@@ -821,7 +821,6 @@ vendor/lib/libstagefrighthw.so
 vendor/lib64/libstagefrighthw.so
 
 # Misc
-vendor/etc/VideoLog_dynamic.xml
 vendor/etc/slp_conf
 vendor/etc/smsdbvisitor.xml
 vendor/etc/special_pws_channel.xml

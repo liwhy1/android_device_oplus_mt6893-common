@@ -104,10 +104,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/libshims/libldacBT_bco:$(TARGET_COPY_OUT_VENDOR)/lib/libldacBT_bco.so \
     $(LOCAL_PATH)/libshims/libldacBT_bco:$(TARGET_COPY_OUT_VENDOR)/lib64/libldacBT_bco.so
 
-# Camera
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/camera/oplus_camera_config:$(TARGET_COPY_OUT_ODM)/etc/camera/config/oplus_camera_config
-
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0.vendor \
     android.hardware.camera.device@3.2.vendor \

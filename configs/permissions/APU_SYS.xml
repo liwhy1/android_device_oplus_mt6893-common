@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<permissions>
-
-    <permission name="android.permission.SYSTEM_CAMERA" >
-        <group gid="camera" />
-    </permission>
-
-</permissions>

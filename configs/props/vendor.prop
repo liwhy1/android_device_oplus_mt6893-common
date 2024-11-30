@@ -301,8 +301,8 @@ debug.sf.high_fps.early.app.duration=10000000
 debug.sf.high_fps.earlyGl.sf.duration=8300000
 debug.sf.high_fps.earlyGl.app.duration=10000000
 debug.sf.high_fps.hwc.min.duration=7500000
-debug.sf.latch_unsignaled=true
 debug.sf.enable_transaction_tracing=false
+debug.sf.auto_latch_unsignaled=0
 debug.sf.enable_hwc_vds=0
 
 # TEE

@@ -22,7 +22,6 @@
         <Variant name="slow-cpu" enabled="false" />
     </Settings>
     <Decoders>
-        </MediaCodec>
         <MediaCodec name="c2.mtk.adpcm-ms.decoder" type="audio/x-adpcm-ms">
             <Alias name="OMX.MTK.AUDIO.DECODER.ADPCM.MS" />
             <Limit name="channel-count" max="8" />
@@ -160,7 +159,6 @@
         </MediaCodec>
     </Decoders>
     <Encoders>
-        </MediaCodec>
         <MediaCodec name="c2.mtk.h263.encoder" type="video/3gpp" >
             <Alias name="OMX.MTK.VIDEO.ENCODER.H263" />
             <Limit name="size" min="176x144" max="176x144" />

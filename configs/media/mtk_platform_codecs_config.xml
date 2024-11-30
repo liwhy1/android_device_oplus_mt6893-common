@@ -3,32 +3,6 @@
 -->
 <MediaCodecs>
     <Decoders>
-        <!-- #ifdef OPLUS_BUG_COMPATIBILITY -->
-        <!-- CaiBo@MM.MediaServer.CTS, 2022/03/09, -->
-        <Video name="cpu.boost.mode"
-               cluster="0"
-               minFrequency="700000" />
-        <Video name="cpu.boost.multiple.instances"
-               cluster="0,1,2"
-               minFrequency="2000000,2750000,1200000" />
-        <Video name="cpu.boost.720p180"
-               cluster="0,1"
-               minFrequency="2000000,2000000" />
-        <!-- #endif //OPLUS_BUG_COMPATIBILITY -->
-        <Video name="buffer.manager"
-               bufferFetchTimeoutMs="1000" />
-        <Video name="color.converter"
-               alwaysColorConvertChecker="true" />
-        <Video name="cpu.boost.mode"
-               cluster="0"
-               minFrequency="750000" />
-        <!-- Performance management -->
-        <Video name="cpu.boost.multiple.instances"
-               cluster="0,1,2"
-               minFrequency="2000000,2600000,1108000" />
-        <Video name="cpu.boost.720p180"
-               cluster="0,1,2"
-               minFrequency="2000000,2600000,2000000" />
         <Video name="c2.mtk.mpeg4.decoder"
                type="video/mp4v-es"
                driverIntf="v4l2"

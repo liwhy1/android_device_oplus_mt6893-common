@@ -663,35 +663,6 @@ system_ext/etc/public.libraries-oplus.txt
 vendor/lib/hw/sound_trigger.primary.default.so
 
 # Media
-odm/lib/libavcodec.so
-odm/lib/libavformat.so
-odm/lib/libavutil.so
-odm/lib/libbsproxy.so
-odm/lib/libdav1d.so.4
-odm/lib/libdla_loader.so
-odm/lib/libdpservice.so
-odm/lib/libffmpeg_omx.so
-odm/lib/libffmpeg_utils.so
-odm/lib/libormshalclient.so
-odm/lib/librpmbengclient.so
-odm/lib/libswresample.so
-odm/lib/libswscale.so
-odm/lib64/libavcodec.so
-odm/lib64/libavformat.so
-odm/lib64/libavutil.so
-odm/lib64/libbsproxy.so
-odm/lib64/libdav1d.so.4
-odm/lib64/libdla_loader.so
-odm/lib64/libdla_loader_ins.so
-odm/lib64/libdpservice.so
-odm/lib64/libhwm-oplus.so
-odm/lib64/libormshalclient.so
-odm/lib64/librpmbengclient.so
-odm/lib64/libswresample.so
-odm/lib64/libswscale.so
-odm/lib64/oplus.sensors.ssc.so
-odm/etc/media_codecs_ffmpeg.xml
-odm/etc/media_codecs_vendor_oplus.xml
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
 vendor/bin/jpegtool

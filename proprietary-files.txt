@@ -110,10 +110,6 @@ vendor/lib64/lib_iir.so
 vendor/lib64/lib_speech_enh.so
 vendor/lib64/libaaa_ltm.so
 vendor/lib64/libaaa_ltmx.so
-vendor/lib64/libaibc_tuning.so
-vendor/lib64/libaibc_tuning_p2.so
-vendor/lib64/libaibc_tuning_p3.so
-vendor/lib64/libaidepth_tuning.so
 vendor/lib64/libaudio_engineer_test.so
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
@@ -597,7 +593,7 @@ vendor/etc/init/init.vtservice_hidl.rc|f2e992214ed5bb99c2c2a135cf1f0996dba8a8a0
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so|bb9ff554802e7bffb72cf24604109dafcf0019fc
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|5e228669d2c575e38fc02a13404f31bc22494b87
 
-# IMS (framework)
+# IMS (framework) - from OP5339L1 CPH2359_14.0.0.600(EX01)
 -framework/mediatek-common.jar
 -framework/mediatek-framework.jar
 -framework/mediatek-ims-base.jar
@@ -608,9 +604,11 @@ vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|5e228669d2c575e38fc0
 -framework/mediatek-telecom-common.jar
 -framework/mediatek-telephony-common.jar
 
-# IMS (Patched) - from stock
+# IMS (Patched framework)
 -framework/mediatek-telephony-base.jar|9803c5df30b21000f5f473e9395f0fd9c555f0cd
--priv-app/ImsService/ImsService.apk|d5f3b3a43a7d6b01ab27f4a0fba52dc891416cc9
+
+# IMs (Patched Apk) from c.12 RMX3031-user 12 SP1A.210812.016 1663769087038 release-keys 
+-priv-app/ImsService/ImsService.apk|0b2f517f9667cd5b831e3e7f2aae238102ed6ba1
 
 # IMS
 odm/lib/vendor.oplus.hardware.ims@1.0.so
@@ -828,7 +826,6 @@ vendor/etc/virtual-spn-conf-by-efgid1.xml
 vendor/etc/virtual-spn-conf-by-efpnn.xml
 vendor/etc/virtual-spn-conf-by-efspn.xml
 vendor/etc/virtual-spn-conf-by-imsi.xml
-vendor/etc/wfd_source_capability.csv
 odm/lib64/vendor.oplus.hardware.engineer@1.0.so
 odm/lib64/vendor.oplus.hardware.subsys-V1-ndk_platform.so
 odm/init.oplus.face.rc
@@ -875,7 +872,6 @@ vendor/lib64/audio_common-aidl-cpp.so
 vendor/lib64/libAVCSecureVencCA.so
 vendor/lib64/libSQLiteModule_VER_ALL.so
 vendor/lib64/libcustomer_testvision.so
--vendor/priv-app/GpuGameDriver.mt6893/GpuGameDriver.mt6893.apk
 
 # Modules ( configs )
 vendor/etc/init/hw/factory_init.connectivity.common.rc
@@ -1011,8 +1007,6 @@ vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 
 # OLC
-odm/etc/vintf/manifest/vendor.oplus.hardware.olc@2.0-service.xml
-odm/etc/permissions/vendor-oplus-hardware-olc-2.xml
 odm/etc/init/vendor.oplus.hardware.olc@2.0-service.rc
 odm/bin/hw/vendor.oplus.hardware.olc@2.0-service
 odm/lib/vendor.oplus.hardware.olc@2.0.so

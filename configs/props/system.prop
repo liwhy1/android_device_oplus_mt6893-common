@@ -8,7 +8,7 @@ ro.kernel.zio=38,108,105,16
 ro.audio.silent=0
 ro.audio.usb.period_us=16000
 ro.camera.sound.forced=0
-ro.config.vc_call_vol_steps=15
+ro.config.vc_call_vol_steps=7
 
 # Brand
 Build.BRAND=MTK
@@ -134,6 +134,7 @@ persist.vendor.vonr_setting_support=1
 #ADB
 persist.service.adb.enable=1                                                    
 persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
 
 #Camera
 persist.camera.HAL3.enabled=1

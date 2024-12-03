@@ -333,3 +333,9 @@ vendor.connsys.driver.ready=no
 ro.telephony.iwlan_operation_mode=AP-assisted
 ro.vendor.ap_info_monitor=0
 ro.vendor.wifi.sap.concurrent.iface=ap1
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.debuggable=1

@@ -37,8 +37,6 @@ vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
 
 # Audio
-lib/vendor.oplus.hardware.performance@1.0.so
-lib64/vendor.oplus.hardware.performance@1.0.so
 odm/bin/hw/vendor.oplus.hardware.performance@1.0-service
 odm/etc/init/vendor.oplus.hardware.performance@1.0-service.rc
 -odm/etc/vintf/manifest/manifest_oplus_performance.xml
@@ -483,8 +481,6 @@ odm/lib/libosensehalclient.so
 odm/lib/vendor.oplus.hardware.osense.client@1.0.so
 odm/lib64/libosensehalclient.so
 odm/lib64/vendor.oplus.hardware.osense.client@1.0.so
-system_ext/lib/vendor.oplus.hardware.osense.client@1.0.so
-system_ext/lib64/vendor.oplus.hardware.osense.client@1.0.so
 vendor/lib/libnxp_extamp_intf.so
 vendor/lib64/libnxp_extamp_intf.so
 
@@ -656,7 +652,6 @@ vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 # Libraries
 etc/public.libraries-mtk.txt
 etc/public.libraries-trustonic.txt
-system_ext/etc/public.libraries-oplus.txt
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.default.so
@@ -731,17 +726,6 @@ vendor/lib64/VP9SecureVdecCA.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libMtkOmxCore.so
 vendor/lib64/libacdk.so
-vendor/lib64/libcodec2_mtk_c2store.so
-vendor/lib64/libcodec2_mtk_vdec.so
-vendor/lib64/libcodec2_mtk_venc.so
-vendor/lib64/libcodec2_soft_mtk_alacdec.so
-vendor/lib64/libcodec2_soft_mtk_apedec.so
-vendor/lib64/libcodec2_soft_mtk_imaadpcmdec.so
-vendor/lib64/libcodec2_soft_mtk_mp3dec.so
-vendor/lib64/libcodec2_soft_mtk_msadpcmdec.so
-vendor/lib64/libcodec2_soft_mtk_wmadec.so
-vendor/lib64/libcodec2_vpp_qt_plugin.so
-vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libfft_vendor.so
 vendor/lib64/libformatter.so
 vendor/lib64/libhdrvideo.so
@@ -772,7 +756,7 @@ vendor/lib/libcodec2_hidl_plugin.so
 vendor/lib64/libcodec2_hidl_plugin.so
 
 # Mtkfusionrild - from c.12 RMX3031-user 12 SP1A.210812.016 1663769087038 release-keys
-vendor/bin/hw/mtkfusionrild|ff0d156e9f745f57043e53d6e599d3ba15293e2e
+vendor/bin/hw/mtkfusionrild|a026e560f5af92f8a9a2eb2159394e54e4a55bec
 
 # Misc
 vendor/etc/slp_conf
@@ -1037,15 +1021,6 @@ odm/lib/vendor.oplus.hardware.radio-V1-ndk_platform.so
 odm/lib64/vendor.oplus.hardware.appradio@1.0.so
 odm/lib64/vendor.oplus.hardware.mtkmodemaci@1.0.so
 odm/lib64/vendor.oplus.hardware.radio-V1-ndk_platform.so
-lib/vendor.mediatek.hardware.mtkradioex.rsu-V1-ndk.so
-lib/vendor.mediatek.hardware.mtkradioex.se-V1-ndk.so
-lib/vendor.mediatek.hardware.mtkradioex.sim-V1-ndk.so
-lib64/vendor.mediatek.hardware.mtkradioex.rsu-V1-ndk.so
-lib64/vendor.mediatek.hardware.mtkradioex.se-V1-ndk.so
-lib64/vendor.mediatek.hardware.mtkradioex.sim-V1-ndk.so
-system_ext/lib/vendor.oplus.hardware.camera.slogan@1.0.so
-system_ext/lib/vendor.mediatek.hardware.mtkradioex@3.0.so
-system_ext/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 vendor/bin/AgentTest
 vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd

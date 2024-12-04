@@ -671,6 +671,7 @@ vendor/lib/AV1SecureVdecCA.so
 vendor/lib/AVCSecureVdecCA.so
 vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
+vendor/lib/libadpcmdec_mtk.so
 vendor/lib/libHEVCdec_sa.ca7.android.so
 vendor/lib/libJpgEncPipe.so
 vendor/lib/libcodec2_mtk_c2store.so

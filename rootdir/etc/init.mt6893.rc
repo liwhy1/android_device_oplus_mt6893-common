@@ -146,6 +146,8 @@ on post-fs
     chown system system /mnt/vendor/protect_s
     chmod 0770 /mnt/vendor/protect_s
     chown root log /proc/ccci_sib
+    on property:sys.boot_completed=1
+	write /sys/devices/virtual/oplus_chg/usb/otg_switch 1
 
 on post-fs-data
     wait_for_prop vendor.all.modules.ready 1

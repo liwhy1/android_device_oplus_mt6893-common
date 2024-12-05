@@ -8,7 +8,7 @@
   {
     "repository": "oplus-ossi-development/proprietary_vendor_oplus_mt6893-common",
     "target_path": "vendor/oplus/mt6893-common",
-    "revision": "lineage-21",
+    "revision": "lineage-22",
     "remote": "github"
   },
   {
@@ -26,13 +26,13 @@
   {
     "repository": "LineageOS/android_hardware_oplus",
     "target_path": "hardware/oplus",
-    "revision": "lineage-21",
+    "revision": "lineage-22",
     "remote": "github"
   },
   {
     "repository": "LineageOS/android_hardware_lineage_compat",
     "target_path": "hardware/lineage/compat",
-    "revision": "lineage-21",
+    "revision": "lineage-22",
     "remote": "github"
   },
   {

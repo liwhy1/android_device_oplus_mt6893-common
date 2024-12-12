@@ -529,10 +529,8 @@ PRODUCT_PACKAGES += \
     libsensors_shim
 
 PRODUCT_PACKAGES += \
-    libshim_ui
-
-# Shim for missing symbols
-PRODUCT_PACKAGES += libshim
+    libshim_ui \
+    libshim
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/oplus/mt6893-common/mt6893-common-vendor.mk)

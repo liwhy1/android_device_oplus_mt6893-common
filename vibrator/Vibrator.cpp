@@ -46,66 +46,36 @@ ndk::ScopedAStatus Vibrator::off() {
 ndk::ScopedAStatus Vibrator::on(int32_t timeoutMs, const std::shared_ptr<IVibratorCallback>& callback) {
     ndk::ScopedAStatus status;
 
-    LOG(VERBOSE) << "Vibrator on for timeoutMs: " << timeoutMs;
+    // Force timeout to 85ms
+    timeoutMs = 85;
 
-    if (timeoutMs < 1) return off();
+    LOG(VERBOSE) << "Vibrator on for forced timeoutMs: " << timeoutMs;
 
-    // if timeoutMs is bigger than 102, we do a regular vibration
-    if (timeoutMs < 103) {
-        // begin haptic
-        status = setNodes(SETUP_CLICK_HAPTIC);
-        if (!status.isOk()) return status;
+    // Begin haptic setup
+    status = setNodes(SETUP_CLICK_HAPTIC);
+    if (!status.isOk()) return status;
 
-        std::string seqValue = "0x00 0x00";
+    // Set the sequence value for an 85ms vibration
+    std::string seqValue = "0x00 0x08";  // Adjust this value as needed for hardware
+    status = setNode(SEQ_PATH, seqValue);
+    if (!status.isOk()) return status;
 
-#ifdef VIBRATOR_ALT_SEQ_TYPE
-        if (timeoutMs < 3) seqValue = "0x00 0x07";
-        else if (timeoutMs < 10) seqValue = "0x00 0x0e";
-        else if (timeoutMs < 20) seqValue = "0x00 0x01";
-        else if (timeoutMs < 40) seqValue = "0x00 0x0d";
-        else if (timeoutMs < 60) seqValue = "0x00 0x04";
-        else if (timeoutMs < 80) seqValue = "0x00 0x06";
-        else seqValue = "0x00 0x0a";
-#else
-        if (timeoutMs < 3) seqValue = "0x00 0x09";
-        else if (timeoutMs < 10) seqValue = "0x00 0x0a";
-        else if (timeoutMs < 20) seqValue = "0x00 0x04";
-        else if (timeoutMs < 40) seqValue = "0x00 0x0b";
-        else if (timeoutMs < 60) seqValue = "0x00 0x05";
-        else if (timeoutMs < 80) seqValue = "0x00 0x07";
-        else seqValue = "0x00 0x0a";
-#endif
+    // Execute haptic vibration
+    status = setNodes(EXECUTE_CLICK_HAPTIC);
+    if (!status.isOk()) return status;
 
-        // set the seq value
-        status = setNode(SEQ_PATH, seqValue);
-        if (!status.isOk()) return status;
-
-        // execute haptic
-        status = setNodes(EXECUTE_CLICK_HAPTIC);
-        if (!status.isOk()) return status;
-    } else {
-        // setup vibration
-        status = setNodes(SETUP_NORMAL_VIBRATION);
-        if (!status.isOk()) return status;
-
-        status = setNode(DURATION_PATH, std::to_string(timeoutMs));
-        if (!status.isOk()) return status;
-
-        // execute vibration
-        status = setNodes(EXECUTE_NORMAL_VIBRATION);
-        if (!status.isOk()) return status;
-    }
-
+    // Handle the callback if provided
     if (callback != nullptr) {
         std::thread([=] {
-            LOG(VERBOSE) << "Starting on on another thread";
-            usleep(timeoutMs * 1000);
-            LOG(VERBOSE) << "Notifying on complete";
+            LOG(VERBOSE) << "Starting callback thread for forced 85ms vibration";
+            usleep(timeoutMs * 1000);  // Sleep for 85ms
+            LOG(VERBOSE) << "Notifying onComplete";
             if (!callback->onComplete().isOk()) {
                 LOG(ERROR) << "Failed to call onComplete";
             }
         }).detach();
     }
+
     return ndk::ScopedAStatus::ok();
 }
 

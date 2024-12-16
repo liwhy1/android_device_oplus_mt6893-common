@@ -36,6 +36,14 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
+function vendor_imports() {
+	cat <<EOF >>"$1"
+		"device/oplus/mt6893-common",
+		"hardware/mediatek",
+		"hardware/mediatek/libmtkperf_client"
+EOF
+}
+
 # Initialize the helper for device
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
 

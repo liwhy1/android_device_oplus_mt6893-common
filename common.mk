@@ -302,10 +302,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Enforce RRO targets
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
-# OplusDoze
-PRODUCT_PACKAGES += \
-    OplusDoze
-
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -465,8 +461,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
     $(COMMON_PATH) \
-    hardware/mediatek \
-    hardware/oplus
+    hardware/mediatek
 
 # IMS
 PRODUCT_BOOT_JARS += \
@@ -483,10 +478,6 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.mtk \
     android.hardware.thermal@2.0.vendor \
     android.hardware.thermal@1.0-impl
-
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.oplus
 
 # USB
 PRODUCT_PACKAGES += \

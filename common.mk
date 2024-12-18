@@ -41,10 +41,7 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_AAPT_CONFIG := xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
-# Device-specific background service
-PRODUCT_PACKAGES += \
-    OssiDeviceService
-
+# Doze
 PRODUCT_PACKAGES += \
     OplusDoze
 

@@ -45,6 +45,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 PRODUCT_PACKAGES += \
     OssiDeviceService
 
+PRODUCT_PACKAGES += \
+    OplusDoze
+
 # Always use scudo for memory allocator
 PRODUCT_USE_SCUDO := true
 

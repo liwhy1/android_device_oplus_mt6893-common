@@ -1131,6 +1131,7 @@ odm/etc/sensor/sensor_config.json
 -odm/etc/vintf/manifest/manifest_oplusSensor.xml
 odm/lib/vendor.oplus.hardware.oplusSensor@1.0.so
 odm/lib64/vendor.oplus.hardware.oplusSensor@1.0.so
+odm/lib64/oplus.sensors.ssc.so
 vendor/lib/libSensorSave.so
 vendor/lib/libsensorndkbridge.so:vendor/lib/libsensorndkbridge-v30.so
 vendor/lib/librgbwlightsensor.so

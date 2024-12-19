@@ -779,8 +779,6 @@ vendor/lib64/libviamipc-ril.so
 vendor/lib64/libwpfa.so
 vendor/lib64/libvpu.so
 vendor/lib64/libvpu5.so
-vendor/lib/libcodec2_hidl_plugin.so
-vendor/lib64/libcodec2_hidl_plugin.so
 
 # Mtkfusionrild - from c.12 RMX3031-user 12 SP1A.210812.016 1663769087038 release-keys
 vendor/bin/hw/mtkfusionrild|a026e560f5af92f8a9a2eb2159394e54e4a55bec

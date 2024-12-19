@@ -41,6 +41,9 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_AAPT_CONFIG := xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
+# Updater
+AB_OTA_UPDATER := false
+
 # Doze
 PRODUCT_PACKAGES += \
     OplusDoze

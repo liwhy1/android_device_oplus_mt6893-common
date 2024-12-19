@@ -484,13 +484,13 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.mt6893
 
 # VNDK
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v33/arm64/arch-arm-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefright_foundation-v33.so \
-    prebuilts/vndk/v32/arm64/arch-arm-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v32.so \
-    prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstagefright_foundation-v33.so \
-    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v32.so \
-    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-core/libcrypto.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcrypto-v32.so \
-    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-core/libssl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libssl-v32.so
+PRODUCT_PACKAGES += \
+    libcrypto-v32 \
+    libssl-v32 \
+    libbinder_v32 \
+    libhidlbase_v32 \
+    libutils_v32 \
+    libstagefright_foundation_v33
 
 # WiFi
 PRODUCT_PACKAGES += \

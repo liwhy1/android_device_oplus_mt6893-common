@@ -37,13 +37,13 @@ source "${HELPER}"
 function blob_fixup {
     case "$1" in
         vendor/lib*/hw/vendor.mediatek.hardware.pq@2.15-impl.so)
-            "$PATCHELF" --replace-needed libutils.so libutils-v32.so "$2"
+            "$PATCHELF" --replace-needed libutils.so libutils_v32.so "$2"
             ;;
         vendor/bin/hw/android.hardware.media.c2@1.2-mediatek|vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
 	    [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libcodec2_hidl@1.0.so" "${2}"
             "${PATCHELF}" --add-needed "libshim.so" "${2}"
-            "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
+            "${PATCHELF}" --add-needed "libstagefright_foundation_v33.so" "${2}"
             ;;
         vendor/bin/mtk_agpsd)
            "$PATCHELF" --replace-needed libcrypto.so libcrypto-v32.so "$2"

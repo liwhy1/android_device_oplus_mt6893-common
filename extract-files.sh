@@ -36,8 +36,8 @@ source "${HELPER}"
 
 function blob_fixup {
     case "$1" in
-        vendor/lib*/hw/vendor.mediatek.hardware.pq@2.15-impl.so)
-            "$PATCHELF" --replace-needed libutils.so libutils_v32.so "$2"
+        vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service)
+            "$PATCHELF" --replace-needed libutils.so libutils-v31.so "$2"
             ;;
         vendor/bin/hw/android.hardware.media.c2@1.2-mediatek|vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
 	    [ "$2" = "" ] && return 0

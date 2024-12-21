@@ -85,14 +85,11 @@ cc_prebuilt_library_shared {
                 none: true,
         },
         target: {
-                android_arm: {
-                        srcs: ["arm/libutils-v32.so"],
-                },
                 android_arm64: {
-                        srcs: ["arm64/libutils-v32.so"],
+                        srcs: ["libutils-v32.so"],
                 },
         },
-        compile_multilib: "both",
+        compile_multilib: "64",
         check_elf_files: false,
         vendor: true,
 }

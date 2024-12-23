@@ -218,10 +218,6 @@ PRODUCT_PACKAGES += \
    libkeystore-engine-wifi-hidl \
    libnetutils.vendor
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.mt6893
-
 # OMX
 PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.1.vendor \

@@ -136,10 +136,6 @@ PRODUCT_PACKAGES += \
     libion.vendor \
     libui.vendor
 
-# Display saturation adjust
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.sys.sf.color_saturation?=1.37
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \

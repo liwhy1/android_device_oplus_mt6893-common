@@ -8,31 +8,13 @@
   {
     "repository": "oplus-ossi-development/proprietary_vendor_oplus_mt6893-common",
     "target_path": "vendor/oplus/mt6893-common",
-    "revision": "lineage-22",
+    "revision": "lineage-22.1",
     "remote": "github"
   },
   {
     "repository": "oplus-ossi-development/android_hardware_mediatek",
     "target_path": "hardware/mediatek",
     "revision": "lineage-21",
-    "remote": "github"
-  },
-  {
-    "repository": "oplus-ossi-development/android_hardware_mediatek_wlan",
-    "target_path": "hardware/mediatek/wlan",
-    "revision": "lineage-21",
-    "remote": "github"
-  },
-  {
-    "repository": "LineageOS/android_hardware_oplus",
-    "target_path": "hardware/oplus",
-    "revision": "lineage-22",
-    "remote": "github"
-  },
-  {
-    "repository": "LineageOS/android_hardware_lineage_compat",
-    "target_path": "hardware/lineage/compat",
-    "revision": "lineage-22",
     "remote": "github"
   },
   {

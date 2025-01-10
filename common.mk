@@ -500,7 +500,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     hostapd \
     hostapd_cli \
-    libwifi-hal-mt66xx \
     libwifi-system-iface.vendor
 
 PRODUCT_COPY_FILES += \

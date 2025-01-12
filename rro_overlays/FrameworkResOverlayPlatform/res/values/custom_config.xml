@@ -4,9 +4,17 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <!-- Whether device has warp charging support -->
-    <bool name="config_hasWarpCharger">true</bool>
 
+    <!-- Whether device has VOOC charging support -->
+    <bool name="config_hasVoocCharger">true</bool>
+    
     <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
-    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/oplus_chg/battery/voocchg_ing</string>
+    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/oplus_chg/battery/fast_charge</string>
+    
+	<!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath2" translatable="false">/sys/class/oplus_chg/battery/voocchg_ing</string>
+    
+	<!-- Expected value from fast charging status file  -->
+    <string name="config_oemFastChargerStatusValue" translatable="false">1</string>
+	
 </resources>

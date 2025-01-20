@@ -21,6 +21,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Call proprietary blob setup
+$(call inherit-product-if-exists, packages/apps/OneplusParts/parts.mk)
+$(call inherit-product-if-exists, packages/apps/PocketMode/pocket_mode.mk)
+
 # Vendor Log Tag
 include $(COMMON_PATH)/configs/props/logtag.mk
 
@@ -340,7 +344,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/publiclibraries/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # Power
-$(call inherit-product, $(COMMON_PATH)/power-libperfmgr/power-libperfmgr.mk)
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.pixel-libperfmgr
 
 PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.2-service.stub
@@ -443,9 +448,12 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/mediatek \
+    hardware/mediatek/libmtkperf_client \
     $(DEVICE_PATH) \
-    $(COMMON_PATH) \
-    hardware/mediatek
+    $(COMMON_PATH)
 
 # IMS
 PRODUCT_BOOT_JARS += \
@@ -469,7 +477,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.mt6893
+    vendor.qti.hardware.vibrator.service
 
 # VNDK
 PRODUCT_PACKAGES += \

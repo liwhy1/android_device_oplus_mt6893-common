@@ -74,6 +74,9 @@
          Otherwise, the device may fail to wake out of suspend reliably.
          The default is false. -->
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+	
+	<!-- Whether to enable Lineage Health Service -->
+    <bool name="config_lineageHealthSupported">true</bool>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>

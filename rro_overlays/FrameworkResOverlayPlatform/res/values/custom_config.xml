@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- Whether device has warp charging support -->
+    <bool name="config_hasWarpCharger">true</bool>
+    
+    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/oplus_chg/battery/fast_charge</string>
+    
+	<!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath2" translatable="false">/sys/class/oplus_chg/battery/voocchg_ing</string>
+    
+	<!-- Expected value from fast charging status file  -->
+    <string name="config_oemFastChargerStatusValue" translatable="false">1</string>
+	
+    <!-- Smart charging -->
+    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/oplus_chg/battery/mmi_charging_enable</string>
+    <string name="config_SmartChargingSuspendValue" translatable="false">0</string>
+    <string name="config_SmartChargingResumeValue" translatable="false">1</string>
+
+    <!-- Whether charging control should be enabled by default -->
+    <bool name="config_chargingControlEnabled">true</bool>
+
+</resources>

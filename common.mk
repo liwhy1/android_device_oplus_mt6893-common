@@ -152,7 +152,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.mt6893
+    android.hardware.biometrics.fingerprint@2.3-service.oplus
 
 # Freeform Multiwindow
 PRODUCT_COPY_FILES += \

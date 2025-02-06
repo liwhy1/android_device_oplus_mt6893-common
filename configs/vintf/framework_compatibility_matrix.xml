@@ -1392,7 +1392,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
+    <hal format="hidl" optional="true">
         <name>android.hardware.wifi</name>
         <version>1.5</version>
         <interface>

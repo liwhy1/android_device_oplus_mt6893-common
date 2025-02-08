@@ -286,7 +286,8 @@ PRODUCT_PACKAGES += \
     SystemUIOverlayPlatform \
     SettingsOverlayPlatform \
     TelephonyOverlay \
-    CarrierConfigOverlay
+    CarrierConfigOverlay \
+    SettingsProviderOverlay
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
@@ -417,8 +418,7 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     DozeOverlaySystem \
     DozeOverlaySystemUI \
-    OplusDozeOverlay \
-    OPlusSettingsResTarget
+    OplusDozeOverlay
 
 # Soundtrigger
 PRODUCT_PACKAGES += \

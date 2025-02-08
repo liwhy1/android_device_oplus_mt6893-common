@@ -549,9 +549,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     orms_core_config
 
-# ADB - Early
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.boot.adb_early=1
-
 # Inherit from vendor blobs
 $(call inherit-product, vendor/oplus/mt6893-common/mt6893-common-vendor.mk)

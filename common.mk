@@ -19,9 +19,6 @@ COMMON_PATH := device/oplus/mt6893-common
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
-# Disable A/B target features
-$(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
-
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Call proprietary blob setup

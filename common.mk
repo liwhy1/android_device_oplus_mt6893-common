@@ -22,9 +22,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Call proprietary blob setup
-$(call inherit-product-if-exists, device/oplus/camera/camera.mk)
+#$(call inherit-product-if-exists, device/oplus/camera/camera.mk)
 $(call inherit-product-if-exists, packages/apps/OneplusParts/parts.mk)
-$(call inherit-product-if-exists, packages/apps/PocketMode/pocket_mode.mk)
 
 # Vendor Log Tag
 include $(COMMON_PATH)/configs/props/logtag.mk
@@ -38,6 +37,26 @@ TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 PRODUCT_AAPT_CONFIG := xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
+
+# RRO
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay \
+    WifiOverlay \
+    OplusDozeOverlay \
+    FrameworkResOverlayPlatform \
+    SystemUIOverlayPlatform \
+    SettingsOverlayPlatform \
+    TelephonyOverlay \
+    CarrierConfigOverlay \
+    SettingsProviderOverlay
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
+
+# Enforce RRO targets
+PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-lineage/lineage-sdk
 
 # Updater
 AB_OTA_UPDATER := false
@@ -277,21 +296,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/permissions/nfc_features.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/nfc_features.xml
 
-# Overlays
-PRODUCT_PACKAGES += \
-    FrameworkResOverlayPlatform \
-    SystemUIOverlayPlatform \
-    SettingsOverlayPlatform \
-    TelephonyOverlay \
-    CarrierConfigOverlay \
-    SettingsProviderOverlay
-
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
-
-# Enforce RRO targets
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -342,7 +346,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
     frameworks/native/data/etc/android.software.opengles.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
-	
+
 # Public Libraries
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/publiclibraries/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -408,14 +412,6 @@ PRODUCT_PACKAGES += \
     fstab.mt6893.ramdisk \
     ueventd.oplus.rc \
     ueventd.mtk.rc
-
-# Rro
-PRODUCT_PACKAGES += \
-    TetheringConfigOverlay \
-    WifiOverlay \
-    DozeOverlaySystem \
-    DozeOverlaySystemUI \
-    OplusDozeOverlay
 
 # Soundtrigger
 PRODUCT_PACKAGES += \
@@ -533,10 +529,7 @@ PRODUCT_PACKAGES += \
 
 # Oplus Camera
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/camera/oplus_camera_config:$(TARGET_COPY_OUT_ODM)/etc/camera/config/oplus_camera_config
-
-# Oplus Camera
-PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/camera/oplus_camera_config:$(TARGET_COPY_OUT_ODM)/etc/camera/config/oplus_camera_config \
     $(COMMON_PATH)/configs/permissions/com.oplus.camera.unit.sdk_product.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.oplus.camera.unit.sdk_product.xml \
     $(COMMON_PATH)/configs/permissions/oplus_camera_default_grant_permissions_list.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/oplus_camera_default_grant_permissions_list.xml \
     $(COMMON_PATH)/configs/permissions/APU_SYS.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/APU_SYS.xml \

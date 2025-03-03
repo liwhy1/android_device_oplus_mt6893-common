@@ -22,7 +22,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Call proprietary blob setup
-#$(call inherit-product-if-exists, device/oplus/camera/camera.mk)
+$(call inherit-product-if-exists, device/oplus/camera/camera.mk)
 $(call inherit-product-if-exists, packages/apps/OneplusParts/parts.mk)
 
 # Vendor Log Tag

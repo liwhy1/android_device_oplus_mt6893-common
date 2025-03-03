@@ -77,7 +77,7 @@ prebuilt_etc {
 
 prebuilt_etc {
     name: "init_connectivity.rc",
-    src: "etc/init_connectivity.rc",
+    src: "etc/init_conninfra.rc",
     sub_dir: "init/hw",
     vendor: true,
 }

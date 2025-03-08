@@ -93,14 +93,14 @@ prebuilt_etc {
     name: "ueventd.oplus.rc",
     filename: "ueventd.rc",
     src: "etc/ueventd.oplus.rc",
-    device_specific: true,
+    vendor: true,
 }
 
 prebuilt_etc {
     name: "init.recovery.mt6893.rc",
     src: "etc/init.recovery.mt6893.rc",
     sub_dir: "root",
-    recovery: true,
+    vendor: true,
 }
 
 prebuilt_etc {
@@ -114,5 +114,5 @@ prebuilt_etc {
     name: "init.oplus.rc",
     src: "etc/init.oplus.rc",
 	sub_dir: "init",
-    device_specific: true,
+    vendor: true,
 }

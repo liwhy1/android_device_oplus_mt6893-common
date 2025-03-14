@@ -550,6 +550,7 @@
     </hal>
 	<hal format="hidl" optional="true">
         <name>vendor.oplus.hardware.osense.client</name>
+		<transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IOsenseHalReporter</name>

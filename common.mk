@@ -487,8 +487,7 @@ PRODUCT_PACKAGES += \
     libbinder_v32 \
     libhidlbase_v32 \
     libutils_v32 \
-    libstagefright_foundation_v33 \
-    libutils.vendor
+    libstagefright_foundation_v33
 
 # WiFi
 PRODUCT_PACKAGES += \

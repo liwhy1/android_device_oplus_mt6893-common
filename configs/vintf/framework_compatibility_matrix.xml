@@ -1424,7 +1424,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-	<hal format="hidl" optional="true">
+    <hal format="hidl" optional="true">
         <name>vendor.oplus.hardware.osense.client</name>
         <version>1.0</version>
         <interface>

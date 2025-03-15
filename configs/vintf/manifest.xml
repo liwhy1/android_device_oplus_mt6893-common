@@ -542,10 +542,19 @@
             <instance>default</instance>
         </interface>
     </hal>
-	    <hal format="hidl">
+        <hal format="hidl">
         <name>android.hardware.dumpstate</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IDumpstateDevice/default</fqname>
         <fqname>@1.1::IDumpstateDevice/default</fqname>
+    </hal>
+	<hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.osense.client</name>
+        <version>1.0</version>
+        <transport>hwbinder</transport>
+        <interface>
+            <name>IOsenseHalReporter</name>
+            <instance>OsenseHalReporter</instance>
+        </interface>
     </hal>
 </manifest>

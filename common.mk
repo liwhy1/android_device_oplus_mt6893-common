@@ -165,6 +165,10 @@ PRODUCT_PACKAGES += \
     libdrm.vendor \
     libdrm
 
+# Dumpstate
+PRODUCT_PACKAGES += \
+    android.hardware.dumpstate@1.1.vendor
+
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-lite-3.9.1-vendorcompat

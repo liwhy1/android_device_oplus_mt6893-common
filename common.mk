@@ -165,10 +165,6 @@ PRODUCT_PACKAGES += \
     libdrm.vendor \
     libdrm
 
-# Dumpstate
-PRODUCT_PACKAGES += \
-    android.hardware.dumpstate@1.1.vendor
-
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
@@ -237,12 +233,25 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0-service \
     android.hardware.media.c2@1.1.vendor \
     android.hardware.media.c2@1.2.vendor \
     libcodec2_hidl@1.0.vendor \
     libcodec2_hidl@1.1.vendor \
     libcodec2_hidl@1.2.vendor \
     libcodec2_vndk.vendor \
+    libcodec2_soft_avcdec \
+    libcodec2_soft_avcenc \
+    libcodec2_soft_h263dec \
+    libcodec2_soft_h263enc \
+    libcodec2_soft_mpeg4dec \
+    libcodec2_soft_mpeg4enc \
+    libcodec2_soft_vp8dec \
+    libcodec2_soft_vp8enc \
+    libcodec2_soft_vp9dec \
+    libcodec2_soft_vp9enc \
+    libcodec2_soft_hevcdec \
+    libcodec2_soft_hevcenc \
     libstagefright_omx.vendor
 
 # Media
@@ -253,10 +262,16 @@ PRODUCT_PACKAGES += \
     libcodec2_soft_common.vendor
 
 PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(COMMON_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
+    $(COMMON_PATH)/configs/media/media_codecs_mediatek_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_mediatek_audio.xml \
     $(COMMON_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(COMMON_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
-    $(COMMON_PATH)/configs/media/mtk_platform_codecs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mtk_platform_codecs_config.xml
+    $(COMMON_PATH)/configs/media/media_profiles_V1_0.dtd:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.dtd \
+    $(COMMON_PATH)/configs/media/VideoLog_dynamic.xml:$(TARGET_COPY_OUT_VENDOR)/etc/VideoLog_dynamic.xml
+
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/media/mtk_platform_codecs_whitelist.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mtk_platform_codecs_whitelist.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
@@ -356,8 +371,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/publiclibraries/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service.pixel-libperfmgr
+$(call inherit-product, $(COMMON_PATH)/power-libperfmgr/power-libperfmgr.mk)
 
 PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.2-service.stub
@@ -451,8 +465,8 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    hardware/google/interfaces \
-    hardware/google/pixel \
+    $(DEVICE_PATH) \
+    $(COMMON_PATH) \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
     $(DEVICE_PATH) \
@@ -467,6 +481,7 @@ PRODUCT_BOOT_JARS += \
     mediatek-telecom-common \
     mediatek-telephony-base \
     mediatek-telephony-common
+    oplus-support-wrapper
 
 # Thermal
 PRODUCT_PACKAGES += \

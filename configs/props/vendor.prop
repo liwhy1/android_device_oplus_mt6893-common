@@ -219,9 +219,6 @@ debug.mtk_tflite.target_nnapi=29
 # Power HAL
 vendor.powerhal.disp.idle_support=false
 
-# Priv-app Permissions
-ro.control_privapp_permissions=enforce
-
 # Radio
 persist.vendor.radio.fd.counter=150
 persist.vendor.radio.fd.off.counter=50

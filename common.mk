@@ -394,7 +394,7 @@ PRODUCT_PACKAGES += \
     RcsService \
     PresencePolling
 
-# Init
+# Rootdir
 PRODUCT_PACKAGES += \
     init.connectivity.common.rc \
     init.recovery.mt6893.rc \

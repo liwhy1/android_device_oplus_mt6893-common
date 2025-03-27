@@ -478,7 +478,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.mt6893
+    android.hardware.vibrator.service.oplus-richtap
 
 # VNDK
 PRODUCT_PACKAGES += \

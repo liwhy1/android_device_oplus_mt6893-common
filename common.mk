@@ -476,7 +476,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service.oplus
+    vendor.qti.hardware.vibrator.service
 
 # VNDK
 PRODUCT_PACKAGES += \

@@ -447,8 +447,6 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    hardware/google/interfaces \
-    hardware/google/pixel \
     hardware/oplus \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \

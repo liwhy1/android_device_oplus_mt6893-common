@@ -529,9 +529,6 @@ PRODUCT_PACKAGES += \
     libshim_ui \
     libshim
 
-# Oplus Framework
-$(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
-
 # Oplus Camera
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/camera/oplus_camera_config:$(TARGET_COPY_OUT_ODM)/etc/camera/config/oplus_camera_config \

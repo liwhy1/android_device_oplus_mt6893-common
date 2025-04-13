@@ -1,1 +1,5 @@
 allow mobicore system_oplus_project_prop:file { read getattr open map };
+
+# Allow mobicore to read system_prop
+allow mobicore system_prop:file r_file_perms;
+get_prop(mobicore, system_prop)

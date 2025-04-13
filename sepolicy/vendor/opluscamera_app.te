@@ -13,8 +13,6 @@ hal_client_domain(opluscamera_app, hal_mtk_mmagent)
 
 binder_call(opluscamera_app, mtk_hal_camera)
 binder_call(opluscamera_app, hal_performance_oplus)
-binder_call(opluscamera_app, mtk_hal_camera)
-binder_call(opluscamera_app, hal_performance_oplus)
 binder_call(opluscamera_app, mtk_hal_neuralnetworks)
 
 allow opluscamera_app system_data_file:file r_file_perms;

@@ -1,0 +1,15 @@
+# Allow priv_app to read sysfs_net
+allow priv_app sysfs_net:file r_file_perms;
+allow priv_app sysfs_net:dir search;
+
+# Allow priv_app to access codec2 HAL service
+hal_client_domain(priv_app, hal_codec2);
+
+# Allow priv_app to access MediaTek C2 video decoder properties
+get_prop(priv_app, vendor_mtk_c2_log_prop);
+
+# Allow priv_app to access video devices
+allow priv_app video_device_type:chr_file rw_file_perms;
+
+# Allow priv_app to access MediaTek video devices
+allow priv_app mtk_mdp_device:chr_file rw_file_perms;

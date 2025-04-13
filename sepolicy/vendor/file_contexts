@@ -1,3 +1,13 @@
+# MediaTek Codec Libraries
+/(vendor|system/vendor)/lib(64)?/libcodec2_mtk_vdec\.so                                                u:object_r:mtk_codec_file:s0
+/(vendor|system/vendor)/lib(64)?/libcodec2_mtk_c2store\.so                                              u:object_r:mtk_codec_file:s0
+/(vendor|system/vendor)/lib(64)?/libcodec2_vpp_qt_plugin\.so                                            u:object_r:mtk_codec_file:s0
+/(vendor|system/vendor)/lib(64)?/libcodec2_vpp_rs_plugin\.so                                            u:object_r:mtk_codec_file:s0
+
+# MediaTek Video Devices
+/dev/video[0-9]+                                                                                       u:object_r:video_device_type:s0
+/dev/mtk_mdp                                                                                           u:object_r:mtk_mdp_device:s0
+
 # Camera
 /data/vendor/camera_update(/.*)?                                                                        u:object_r:vendor_camera_update_data_file:s0
 /mnt/vendor/persist/camera(/.*)?                                                                        u:object_r:persist_camera_file:s0
@@ -268,7 +278,7 @@
 /sys/devices/platform/disp-leds/leds/lcd-backlight(/.*)?   u:object_r:sysfs_leds:s0
 
 # Vibrator
-/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator-service.mt6893                               u:object_r:hal_vibrator_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service                               u:object_r:hal_vibrator_default_exec:s0
 
 # Nfc
 /dev/nq-nci                                                                                             u:object_r:nfc_device:s0
@@ -329,3 +339,4 @@
 
 # Perfmgr
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr                       u:object_r:hal_power_default_exec:s0
+

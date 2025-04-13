@@ -1,2 +1,6 @@
 binder_call(surfaceflinger, mtk_hal_mmagent)
 hal_client_domain(surfaceflinger, hal_mtk_mmagent)
+
+# Allow surfaceflinger to read vendor_dp_prop
+allow surfaceflinger vendor_dp_prop:file r_file_perms;
+get_prop(surfaceflinger, vendor_dp_prop);

@@ -7,3 +7,10 @@ type oplus_display_device, dev_type;
 # Sensors
 type virtual_sensor_device, dev_type;
 type oplus_block_device, dev_type;
+
+# CCCI
+type ccci_dump_device, dev_type;
+
+# MediaTek Video
+type video_device_type, dev_type;
+

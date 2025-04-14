@@ -1,0 +1,5 @@
+# Allow clatd to read and search various directories
+allow clatd vendor_file:dir r_dir_perms;
+allow clatd shell_data_file:dir search;
+allow clatd shell_test_data_file:dir search;
+allow clatd system_data_root_file:dir r_dir_perms;

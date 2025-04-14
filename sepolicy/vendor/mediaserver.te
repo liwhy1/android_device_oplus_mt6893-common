@@ -1,0 +1,6 @@
+# Allow mediaserver to read vendor default properties
+allow mediaserver vendor_default_prop:file r_file_perms;
+get_prop(mediaserver, vendor_default_prop)
+
+# Allow mediaserver to access MediaTek C2 video decoder properties
+get_prop(mediaserver, vendor_mtk_c2_log_prop);

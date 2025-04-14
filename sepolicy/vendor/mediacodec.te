@@ -1,0 +1,27 @@
+# Allow mediacodec to access codec libraries
+allow mediacodec vendor_file:file { read getattr open execute };
+allow mediacodec vendor_data_file:file { read write open };
+
+# Allow mediacodec to access MediaTek HDR properties
+get_prop(mediacodec, vendor_mtk_pq_prop);
+get_prop(mediacodec, vendor_mtk_pq_ro_prop);
+
+# Allow mediacodec to access MediaTek C2 video decoder properties
+get_prop(mediacodec, vendor_mtk_c2_log_prop);
+set_prop(mediacodec, vendor_mtk_c2_log_prop);
+
+# Allow mediacodec to access all vendor properties
+get_prop(mediacodec, vendor_default_prop);
+
+# Allow mediacodec to access codec2 HAL service
+hal_client_domain(mediacodec, hal_codec2);
+
+# Allow mediacodec to access memory and file descriptors
+allow mediacodec ion_device:chr_file rw_file_perms;
+allow mediacodec proc_meminfo:file r_file_perms;
+allow mediacodec proc_pid_max:file r_file_perms;
+allow mediacodec proc_stat:file r_file_perms;
+
+# Allow mediacodec to access shared memory
+allow mediacodec ashmem_device:chr_file rw_file_perms;
+allow mediacodec hal_graphics_mapper_hwservice:hwservice_manager find;

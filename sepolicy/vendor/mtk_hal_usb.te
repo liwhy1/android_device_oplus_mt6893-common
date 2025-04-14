@@ -1,0 +1,2 @@
+# Allow mtk_hal_usb to search USB sysfs directories
+allow mtk_hal_usb sysfs_usb_nonplat:dir search;

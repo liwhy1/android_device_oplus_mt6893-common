@@ -1,0 +1,15 @@
+# Allow mediacodec to access MediaTek C2 video decoder properties
+get_prop(mediacodec, vendor_mtk_c2_log_prop)
+set_prop(mediacodec, vendor_mtk_c2_log_prop)
+
+# Allow mediacodec to access all vendor properties
+get_prop(mediacodec, vendor_default_prop)
+
+# Allow mediacodec to access codec2 HAL service
+hal_client_domain(mediacodec, hal_codec2)
+
+# Allow mediacodec to access video devices
+allow mediacodec video_device_type:chr_file rw_file_perms;
+
+# Allow mediacodec to access MediaTek video devices
+allow mediacodec mtk_mdp_device:chr_file rw_file_perms;

@@ -118,6 +118,7 @@ ro.hardware.egl=meow
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 vendor.mtk.hwc.HWC_PLAT_SWITCH_EXTEND_SF_TARGET_TS_FOR_VIDEO=1
 persist.sys.sf.color_saturation=1.0
+persist.sys.sf.native_mode=2
 
 # DRAM
 ro.vendor.mtk_config_max_dram_size=0x800000000
@@ -171,28 +172,43 @@ ro.lmk.thrashing_limit_decay=50
 ro.lmk.limit_killing_array_kb=819200,819200,655360,655360
 ro.lmk.swap_util_max=90
 ro.lmk.psi_complete_stall_ms_dup=70
-ro.lmk.kill_timeout_ms=100
 ro.lmk.nandswap_version=2
 ro.lmk.psi_scrit_complete_stall_ms=150
 ro.lmk.swap_is_low_kill_enable=1
 
-# Media
+# LMKD/PSI
+ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=15
+# Media Properties
 ro.vendor.jpeg_decode_sw_opt=2
 ro.vendor.mtk_video_hevc_enc_support=1
 debug.mediatek.appgamepq_compress=1
+
+# HDR and PQ Properties
 ro.vendor.mtk_pq_support=2
 ro.vendor.mtk_pq_color_mode=3
-ro.vendor.pq.mtk_pq_video_whitelist_support=1
-ro.vendor.pq.mtk_video_transition=1
+ro.vendor.pq.mtk_pq_video_whitelist_support=0
+ro.vendor.pq.mtk_video_transition=0
 ro.vendor.pq.mtk_scltm_support=1
-ro.vendor.mml.mtk_mml_support=0
-ro.vendor.pq.mtk_ai_scence_pq_support=1
-ro.vendor.pq.mtk_hdr10_plus_recording_support=0
-ro.vendor.pq.mtk_ai_sdr_to_hdr_support=0
-ro.vendor.pq.mtk_ultra_resolution_support=1
-ro.vendor.pq.mtk_dre30_support=0
-ro.vendor.pref_scale_enable_cfg=1
-vendor.mtk.vdec.waitkeyframeforplay=15
+ro.vendor.mml.mtk_mml_support=1
+ro.vendor.pq.mtk_ai_scence_pq_support=0
+ro.vendor.pq.mtk_hdr10_plus_recording_support=1
+ro.vendor.pq.mtk_ai_sdr_to_hdr_support=1
+ro.vendor.pq.mtk_ultra_resolution_support=0
+ro.vendor.pq.mtk_dre30_support=1
+ro.vendor.mtk_hdr_video_support=1
+ro.vendor.mtk_hdr10_support=1
+ro.vendor.mtk_hdr10_plus_support=1
+ro.vendor.pq.mtk_hdr10_plus_process=1
+ro.vendor.mtk_video_hal_support=1
+
+# MediaTek Codec Properties
+vendor.mtk.vdec.waitkeyframeforplay=9
+vendor.mtk.vdec.enable.downsize=1
+vendor.mtk.vdec.enable.hdr10plus=1
+vendor.mtk.vdec.enable.hdr10=1
+
+# Miscellaneous Properties
 media.c2.dmabuf.padding=3072
 
 # Mediatek

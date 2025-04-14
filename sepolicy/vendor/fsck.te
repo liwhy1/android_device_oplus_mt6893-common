@@ -1,1 +1,8 @@
 allow fsck oplus_block_device:blk_file rw_file_perms;
+
+# Allow fsck to search vendor directory
+allow fsck mnt_vendor_file:dir search;
+
+# Allow fsck to access nvdata and nvcfg
+allow fsck nvdata_file:dir getattr;
+allow fsck nvcfg_file:dir getattr;

@@ -18,6 +18,10 @@ type vendor_firmware_file, vendor_file_type, file_type;
 
 # Display
 type vendor_sysfs_graphics, fs_type, sysfs_type;
+
+# MediaTek HDR
+type mtk_codec_file, file_type, vendor_file_type;
+type mtk_hdr_file, file_type, vendor_file_type;
 type vendor_proc_display, fs_type, proc_type;
 
 # Fingerprint
@@ -59,3 +63,4 @@ type proc_sched_assist, fs_type, proc_type;
 
 # GPU
 type vendor_sysfs_gpu, fs_type, sysfs_type;
+

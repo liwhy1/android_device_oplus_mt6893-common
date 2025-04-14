@@ -1,7 +1,0 @@
-# Allow audioserver to read vendor default properties
-allow audioserver vendor_mtk_default_prop:file r_file_perms;
-get_prop(audioserver, vendor_mtk_default_prop)
-
-# Allow audioserver to read vendor_default_prop
-allow audioserver vendor_default_prop:file r_file_perms;
-get_prop(audioserver, vendor_default_prop)

@@ -3,7 +3,3 @@ set_prop(rild, vendor_mtk_telephony_addon_prop)
 set_prop(rild, vendor_mtk_mdrsra_v2_support_prop)
 set_prop(rild, vendor_mtk_xfrm_support_prop)
 set_prop(rild, vendor_mtk_md_prop)
-
-# Allow rild to read default_prop
-allow rild default_prop:file r_file_perms;
-get_prop(rild, default_prop)

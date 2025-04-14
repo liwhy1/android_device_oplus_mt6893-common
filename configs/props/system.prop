@@ -48,18 +48,10 @@ pm.dexopt.cmdline=verify
 pm.dexopt.shared=speed
 
 # Display
-ro.opengles.version=196610
-
-# HDR Display
-ro.surface_flinger.has_HDR_display=true
-ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.use_color_management=true
-ro.surface_flinger.protected_contents=true
-debug.mediatek.disp_decompress=1
-ro.vendor.mtk_hdr_video_support=1
+ro.opengles.version=196610 
 
 # IMS
-persist.dbg.volte_avail_ovr=1
+persist.dbg.volte_avail_ovr=1 
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 
@@ -71,16 +63,34 @@ sys.ipo.disable=1
 ro.iorapd.enable=false
 
 # Media
+ro.vendor.mtk_flv_playback_support=1
 media.stagefright.thumbnail.prefer_hw_codecs=true
+vendor.mtk_thumbnail_optimization=true
 
 # Memory
 ro.config.per_app_memcg=false
 
 # Misc
+persist.vendor.pms_removable=1
+persist.vendor.vzw_device_type=0
+ro.vendor.mtk_gwsd_support=1
+persist.vendor.mdlog.flush_log_ratio=0
+ro.mediatek.version.branch=alps-mp-t0.mssi1.tc16sp-pr1
+ro.mediatek.version.release=alps-mp-t0.mp1.tc16sp-pr1-V1
+ro.mediatek.version.build.branch=
+ro.vendor.mtk_omacp_support=1
+ro.vendor.mtk_cta_set=1
+ro.vendor.qti.va_aosp.support=0
 debug.atrace.tags.enableflags=0
 persist.traced.enable=1
+persist.vendor.vzw_device_type=0
+ro.vendor.customer_logpath=/data
+persist.vendor.mdlog.flush_log_ratio=0
+vendor.mtk.hbt.enabled=0
 hbt.debug=off
 ro.base_build=noah
+ro.vendor.mtk_gwsd_support=1
+ro.vendor.mtk_power_off_alarm_test=1
 
 # Perf
 ro.mtk_perf_simple_start_win=1
@@ -122,7 +132,7 @@ persist.radio.is_vonr_enabled_1=true
 persist.vendor.vonr_setting_support=1
 
 #ADB
-persist.service.adb.enable=1
+persist.service.adb.enable=1                                                    
 persist.service.debuggable=1
 persist.sys.usb.config=mtp,adb
 

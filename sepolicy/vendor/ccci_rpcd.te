@@ -1,3 +1,0 @@
-# Allow ccci_rpcd to read default_prop
-allow ccci_rpcd default_prop:file r_file_perms;
-get_prop(ccci_rpcd, default_prop)

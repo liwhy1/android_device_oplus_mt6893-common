@@ -1,11 +1,1 @@
 allow untrusted_app unlabeled:filesystem { getattr };
-
-# Allow apps to access necessary properties and files
-allow untrusted_app proc_version:file r_file_perms;
-allow untrusted_app proc_tty_drivers:file r_file_perms;
-allow untrusted_app sysfs_net:dir r_dir_perms;
-allow untrusted_app shell_test_data_file:dir search;
-
-# Property access
-allow untrusted_app system_prop:file r_file_perms;
-allow untrusted_app serialno_prop:file r_file_perms;

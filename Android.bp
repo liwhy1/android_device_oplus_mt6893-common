@@ -88,3 +88,10 @@ prebuilt_hidl_interfaces {
         "vendor.mediatek.hardware.mms@1.6::IMms",
     ],
 }
+
+prebuilt_hidl_interfaces {
+    name: "hidl_olc_interface",
+    interfaces: [
+        "vendor.oplus.hardware.olc@2.0::IOplusLogCore",
+    ],
+}

@@ -45,24 +45,3 @@ ro.oplus.image.                                  u:object_r:system_oplus_project
 # Realme Parts
 persist.cabc_profile                             u:object_r:system_cabc_prop:s0
 persist.vib_strength                             u:object_r:system_vib_strength_prop:s0
-
-# System properties
-vendor.dp.reduceconfig.disable    u:object_r:vendor_dp_prop:s0
-
-# LMK properties
-ro.lmk.limit_killing_array_kb     u:object_r:lmk_prop:s0
-ro.lmk.psi_complete_stall_ms_dup  u:object_r:lmk_prop:s0
-ro.lmk.nandswap_version           u:object_r:lmk_prop:s0
-ro.lmk.psi_scrit_complete_stall_ms u:object_r:lmk_prop:s0
-ro.lmk.swap_is_low_kill_enable    u:object_r:lmk_prop:s0
-
-# Blur properties
-ro.sf.blurs_are_expensive         u:object_r:system_prop:s0
-
-# Fingerprint properties
-ro.build.fingerprint              u:object_r:system_fingerprint_prop:s0
-
-# Additional vendor display properties
-vendor.dp.rdma.workaround.enable  u:object_r:vendor_dp_prop:s0
-ro.vendor.dp.bypass.mdp           u:object_r:vendor_dp_prop:s0
-ro.hardware.chipname              u:object_r:vendor_dp_prop:s0

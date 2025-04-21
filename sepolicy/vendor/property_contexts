@@ -22,34 +22,6 @@ ro.oplus.mtk_gps_L1L5                                           u:object_r:vendo
 
 # PQ
 ro.vendor.mtk_hdr_video_support                                 u:object_r:vendor_mtk_pq_ro_prop:s0
-ro.vendor.mtk_hdr10_support                                    u:object_r:vendor_mtk_pq_ro_prop:s0
-ro.vendor.mtk_hdr10_plus_support                               u:object_r:vendor_mtk_pq_ro_prop:s0
-ro.vendor.pq.mtk_ai_sdr_to_hdr_support                         u:object_r:vendor_mtk_pq_ro_prop:s0
-ro.vendor.pq.mtk_ai_scence_pq_support                          u:object_r:vendor_mtk_pq_ro_prop:s0
-ro.vendor.pq.mtk_scltm_support                                 u:object_r:vendor_mtk_pq_ro_prop:s0
-
-# PQ Runtime Properties
-persist.vendor.sys.pq.hdr.en                                   u:object_r:vendor_mtk_pq_prop:s0
-persist.vendor.sys.pq.mdp.hdrvp.dre.en                         u:object_r:vendor_mtk_pq_prop:s0
-persist.vendor.sys.pq.hdr_vivid.en                             u:object_r:vendor_mtk_pq_prop:s0
-persist.vendor.sys.pq.mdp.hdrvivid.vp.dre.en                   u:object_r:vendor_mtk_pq_prop:s0
-
-# MediaTek Codec2 Properties
-vendor.mtk.c2.vdec.fmt.support.level                          u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.c2.venc.fmt.support.level                          u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.c2.vdec.hdr.support                               u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.c2.vdec.10bit.support                             u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.c2.vdec.hw.support                               u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.c2.venc.hw.support                               u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.c2.vdec.sw.support                               u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.c2.venc.sw.support                               u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.c2.log                                           u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk_c2_support                                       u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.vdec.enable.downsize                             u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.vdec.enable.hdr10plus                            u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.vdec.enable.hdr10                                u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.vdec.enable.adv_hdr                              u:object_r:vendor_mtk_c2_log_prop:s0
-vendor.mtk.vdec.waitkeyframeforplay                         u:object_r:vendor_mtk_c2_log_prop:s0
 
 # PowerHAL
 vendor.powerhal.rendering                                       u:object_r:vendor_power_prop:s0

@@ -6,3 +6,11 @@
 
 # WiFi
 firmware_directories /odm/etc/wifi/
+
+# Charger
+/sys/class/oplus_chg/*  mmi_charging_enable    0660    system  system
+/sys/devices/virtual/oplus_chg/battery mmi_charging_enable    0660    system    system
+
+# Charger - Fast-charging detection
+/sys/class/oplus_chg/battery/ voocchg_ing    0660    system  system
+/sys/devices/virtual/oplus_chg/battery voocchg_ing    0660    system    system

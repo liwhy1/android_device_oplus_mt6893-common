@@ -268,7 +268,7 @@
 /sys/devices/platform/disp-leds/leds/lcd-backlight(/.*)?   u:object_r:sysfs_leds:s0
 
 # Vibrator
-/vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service                               u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator-service.mt6893                               u:object_r:hal_vibrator_default_exec:s0
 
 # Nfc
 /dev/nq-nci                                                                                             u:object_r:nfc_device:s0
@@ -329,3 +329,12 @@
 
 # Perfmgr
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr                       u:object_r:hal_power_default_exec:s0
+
+# Device nodes for missing functionality
+/dev/ccci_imsdc                                                                                         u:object_r:ccci_imsdc_device:s0
+/dev/snd/controlC0                                                                                      u:object_r:snd_device:s0
+/dev/snd/pcmC0D0p                                                                                       u:object_r:snd_device:s0
+/dev/snd/timer                                                                                          u:object_r:snd_device:s0
+
+# Mali GPU device
+/dev/mali0                                                                                              u:object_r:mali_device:s0

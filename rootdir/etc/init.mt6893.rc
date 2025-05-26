@@ -173,6 +173,17 @@ on post-fs-data
     chown system system /mnt/vendor/nvcfg/fg/old_fg_data
     chown system system /mnt/vendor/nvcfg/fg/car_tune_value
 
+    # Create sensor directory and default sensor calibration files
+    mkdir /mnt/vendor/nvcfg/sensor 0771 system system
+    write /mnt/vendor/nvcfg/sensor/acc_cali.json "{\"calibrated\":false}"
+    write /mnt/vendor/nvcfg/sensor/gyro_cali.json "{\"calibrated\":false}"
+    write /mnt/vendor/nvcfg/sensor/als_cali.json "{\"calibrated\":false}"
+    write /mnt/vendor/nvcfg/sensor/ps_cali.json "{\"calibrated\":false}"
+    write /mnt/vendor/nvcfg/sensor/sar_cali.json "{\"calibrated\":false}"
+    write /mnt/vendor/nvcfg/sensor/ois_cali.json "{\"calibrated\":false}"
+    chown system system /mnt/vendor/nvcfg/sensor/*.json
+    chmod 644 /mnt/vendor/nvcfg/sensor/*.json
+
     # create basic filesystem structure
     # We chown/chmod /mnt/vendor/nvdata again so because mount is run as root + defaults
     chown root system /mnt/vendor/nvdata
@@ -680,9 +691,13 @@ on post-fs-data
     chmod 0666 /dev/exm0
 
 
-	#Thermal
-	mkdir /data/vendor/.tp/ 0775 system system
-	mkdir /data/vendor/thermal/ 0775 system system
+    #Thermal
+    mkdir /data/vendor/.tp/ 0775 system system
+    mkdir /data/vendor/thermal/ 0775 system system
+
+    # Create missing platform-specific gralloc HAL
+    symlink /vendor/lib/hw/gralloc.default.so /vendor/lib/hw/gralloc.mt6893.so
+    symlink /vendor/lib64/hw/gralloc.default.so /vendor/lib64/hw/gralloc.mt6893.so
 
     #MCUPM log
     chmod 0620 /sys/class/misc/mcupm/mcupm_mobile_log
@@ -941,7 +956,7 @@ on property:sys.boot_completed=1
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
 
     # force disable hw overlays to be true
-    exec - root -- /system/bin/sh -c "service call SurfaceFlinger 1008 i32 1" 
+    exec - root -- /system/bin/sh -c "service call SurfaceFlinger 1008 i32 1"
 
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1

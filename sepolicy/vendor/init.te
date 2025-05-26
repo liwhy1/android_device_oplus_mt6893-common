@@ -25,4 +25,18 @@ allow init oplus_block_device:lnk_file relabelto;
 allow init oplus_orms_aidl_service_exec:file {r_file_perms execute};
 allow init sysfs_vibrator:file rw_file_perms;
 
+# Allow init to relabel files and directories
+allow init system_file:dir relabelfrom;
+allow init system_file:file relabelfrom;
+allow init system_file:lnk_file relabelfrom;
+allow init system_lib_file:dir relabelfrom;
+allow init system_lib_file:file relabelfrom;
+
+# Allow init to access system_file and app_data_file
+allow init system_file:sock_file getattr;
+allow init app_data_file:file getattr;
+
+# Allow init to write to sysfs
+allow init sysfs:file write;
+
 get_prop(init, exported_system_prop)

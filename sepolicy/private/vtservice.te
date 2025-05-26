@@ -1,1 +1,8 @@
 allow vtservice radio_service:service_manager find;
+
+# Allow vtservice to read system properties
+allow vtservice system_prop:file r_file_perms;
+get_prop(vtservice, system_prop)
+
+# Allow vtservice to read vendor_default_prop
+allow vtservice vendor_default_prop:file r_file_perms;

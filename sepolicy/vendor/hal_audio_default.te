@@ -11,7 +11,6 @@ allow hal_audio_default audio_ipi_device:chr_file rw_file_perms;
 allow hal_audio_default ccci_device:chr_file rw_file_perms;
 allow hal_audio_default ebc_device:chr_file rw_file_perms;
 allow hal_audio_default vow_device:chr_file rw_file_perms;
-allow hal_audio_default snd_device:chr_file rw_file_perms;
 
 allow hal_audio_default persist_data_file:dir search;
 allow hal_audio_default mnt_vendor_file:dir search;

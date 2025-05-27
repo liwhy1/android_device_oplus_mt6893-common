@@ -20,9 +20,6 @@ on post-fs-data
     mkdir /data/vendor/log 0770 gps system
     mkdir /data/vendor/log/gps 0770 gps system
 
-# AGPS
-    mkdir /data/vendor/agps_supl 0771 gps gps
-
 # GPS EMI
     chmod 0660 /dev/gps_emi
 

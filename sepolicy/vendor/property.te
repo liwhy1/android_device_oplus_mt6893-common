@@ -1,11 +1,5 @@
-# Define vendor display property type
-type vendor_dp_prop, property_type;
-
 vendor_internal_prop(vendor_fingerprint_prop)
 vendor_internal_prop(vendor_audio_tuning_prop)
 vendor_internal_prop(vendor_audio_prop)
 
 vendor_public_prop(vendor_oplus_prop)
-
-# Define property types for vendor_init
-system_public_prop(lmk_prop)

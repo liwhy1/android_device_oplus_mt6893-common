@@ -1,2 +1,0 @@
-# Allow vtservice to access CCCI device
-allow vtservice ccci_imsdc_device:chr_file rw_file_perms;

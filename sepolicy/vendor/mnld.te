@@ -1,5 +1,1 @@
 r_dir_file(mnld, vendor_proc_oplus_version)
-
-# Allow GPS to access AGPS directories
-allow mnld vendor_data_file:dir create_dir_perms;
-allow mnld vendor_data_file:file create_file_perms;

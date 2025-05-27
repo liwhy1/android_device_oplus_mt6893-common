@@ -3,10 +3,3 @@ allow hal_graphics_composer_default vendor_proc_oplus_version:dir search;
 allow hal_graphics_composer_default vendor_proc_oplus_version:file rw_file_perms;
 allow hal_graphics_composer_default sysfs_leds:dir search;
 allow hal_graphics_composer_default sysfs_leds:file rw_file_perms;
-
-# Allow hal_graphics_composer_default to read vendor_dp_prop
-allow hal_graphics_composer_default vendor_dp_prop:file r_file_perms;
-get_prop(hal_graphics_composer_default, vendor_dp_prop)
-
-# Allow hal_graphics_composer_default to access Mali GPU device
-allow hal_graphics_composer_default mali_device:chr_file rw_file_perms;

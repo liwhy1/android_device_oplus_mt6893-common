@@ -329,12 +329,3 @@
 
 # Perfmgr
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr                       u:object_r:hal_power_default_exec:s0
-
-# Device nodes for missing functionality
-/dev/ccci_imsdc                                                                                         u:object_r:ccci_imsdc_device:s0
-/dev/snd/controlC0                                                                                      u:object_r:snd_device:s0
-/dev/snd/pcmC0D0p                                                                                       u:object_r:snd_device:s0
-/dev/snd/timer                                                                                          u:object_r:snd_device:s0
-
-# Mali GPU device
-/dev/mali0                                                                                              u:object_r:mali_device:s0

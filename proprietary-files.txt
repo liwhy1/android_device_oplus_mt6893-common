@@ -534,8 +534,8 @@ odm/lib64/libgf_hal_G7.so
 odm/lib64/vendor.oplus.hardware.biometrics.fingerprint@2.1.so
 odm/lib64/vendor.oplus.hardware.commondcs@1.0.so;MODULE_SUFFIX=_odm
 odm/init.oplus.fingerprints.rc
-vendor/lib/vendor.oplus.hardware.commondcs@1.0.so
-vendor/lib64/vendor.oplus.hardware.commondcs@1.0.so
+vendor/lib/vendor.oplus.hardware.commondcs@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.oplus.hardware.commondcs@1.0.so;MODULE_SUFFIX=_vendor
 
 # GPS
 vendor/bin/mtk_agpsd

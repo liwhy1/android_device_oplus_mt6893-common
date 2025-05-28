@@ -531,11 +531,11 @@ odm/lib64/libgf_hal_G3.so
 odm/lib64/libgf_hal_G5.so
 odm/lib64/libgf_hal_G6.so
 odm/lib64/libgf_hal_G7.so
-odm/lib64/vendor.oplus.hardware.biometrics.fingerprint@2.1.so;MODULE_SUFFIX=_odm
+odm/lib64/vendor.oplus.hardware.biometrics.fingerprint@2.1.so
 odm/lib64/vendor.oplus.hardware.commondcs@1.0.so;MODULE_SUFFIX=_odm
 odm/init.oplus.fingerprints.rc
-vendor/lib/vendor.oplus.hardware.commondcs@1.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.oplus.hardware.commondcs@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib/vendor.oplus.hardware.commondcs@1.0.so
+vendor/lib64/vendor.oplus.hardware.commondcs@1.0.so
 
 # GPS
 vendor/bin/mtk_agpsd
@@ -657,9 +657,9 @@ vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
 
 # Keymaster
-odm/lib/android.hardware.keymaster-V3-ndk_platform.so;MODULE_SUFFIX=_odm
+odm/lib/android.hardware.keymaster-V3-ndk_platform.so
 odm/lib/libtrustonic_keybox_ca.so
-odm/lib64/android.hardware.keymaster-V3-ndk_platform.so;MODULE_SUFFIX=_odm
+odm/lib64/android.hardware.keymaster-V3-ndk_platform.so
 odm/lib64/libneuron_runtime.so;MODULE_SUFFIX=_odm
 odm/lib64/libtrustonic_keybox_ca.so
 vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic
@@ -921,7 +921,7 @@ vendor/lib/mt6893/libneuron_platform.vpu.so;SYMLINK=vendor/lib/libneuron_platfor
 vendor/lib/libcmdl.so
 vendor/lib/libcmdl_ndk.mtk.vndk.so
 vendor/lib/libconnfem.so
-vendor/lib/libneuron_graph_delegate.mtk.so;MODULE_SUFFIX=_vendor
+vendor/lib/libneuron_graph_delegate.mtk.so
 vendor/lib/libneuron_wrapper.so
 vendor/lib64/mt6893/libneuron_platform.vpu.so;SYMLINK=vendor/lib64/libneuron_platform.vpu.so
 vendor/lib64/mt6893/libneuron_runtime.5.so;SYMLINK=vendor/lib64/libneuron_runtime.5.so
@@ -937,7 +937,7 @@ vendor/lib64/libcmdl_ndk.mtk.vndk.so
 vendor/lib64/libconnfem.so
 vendor/lib64/libneuroeara.so
 vendor/lib64/libneuron_adapter.so
-vendor/lib64/libneuron_graph_delegate.mtk.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libneuron_graph_delegate.mtk.so
 vendor/lib64/libneuron_platform.so
 vendor/lib64/libneuron_wrapper.so
 vendor/lib64/libneuropilot_hal_utils.so
@@ -1048,10 +1048,10 @@ vendor/lib64/vendor.mediatek.hardware.atci@1.0.so
 # Radio
 odm/lib/vendor.oplus.hardware.appradio@1.0.so
 odm/lib/vendor.oplus.hardware.mtkmodemaci@1.0.so
-odm/lib/vendor.oplus.hardware.radio-V1-ndk_platform.so
+odm/lib/vendor.oplus.hardware.radio-V1-ndk_platform.so;MODULE_SUFFIX=_odm
 odm/lib64/vendor.oplus.hardware.appradio@1.0.so
 odm/lib64/vendor.oplus.hardware.mtkmodemaci@1.0.so
-odm/lib64/vendor.oplus.hardware.radio-V1-ndk_platform.so
+odm/lib64/vendor.oplus.hardware.radio-V1-ndk_platform.so;MODULE_SUFFIX=_odm
 vendor/bin/AgentTest
 vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd
@@ -1122,7 +1122,7 @@ vendor/lib64/libtranslator_mdmi_v2.8.2.so
 vendor/lib64/libtranslator_utils.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
-vendor/lib64/vendor.oplus.hardware.radio-V1-ndk_platform.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.oplus.hardware.radio-V1-ndk_platform.so
 
 # Secure Element
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek

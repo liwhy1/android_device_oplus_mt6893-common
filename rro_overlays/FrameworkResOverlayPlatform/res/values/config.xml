@@ -75,7 +75,7 @@
          The default is false. -->
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 	
-	<!-- Whether to enable Lineage Health Service -->
+    <!-- Whether to enable Lineage Health Service -->
     <bool name="config_lineageHealthSupported">true</bool>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->

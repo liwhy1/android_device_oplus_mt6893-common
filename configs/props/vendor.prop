@@ -166,13 +166,10 @@ ro.lmk.thrashing_limit_decay=50
 ro.lmk.limit_killing_array_kb=819200,819200,655360,655360
 ro.lmk.swap_util_max=90
 ro.lmk.psi_complete_stall_ms_dup=70
+ro.lmk.kill_timeout_ms=100
 ro.lmk.nandswap_version=2
 ro.lmk.psi_scrit_complete_stall_ms=150
 ro.lmk.swap_is_low_kill_enable=1
-
-# LMKD/PSI
-ro.lmk.kill_heaviest_task=true
-ro.lmk.kill_timeout_ms=15
 
 # Media
 ro.vendor.jpeg_decode_sw_opt=2
@@ -189,6 +186,7 @@ ro.vendor.pq.mtk_hdr10_plus_recording_support=0
 ro.vendor.pq.mtk_ai_sdr_to_hdr_support=0
 ro.vendor.pq.mtk_ultra_resolution_support=1
 ro.vendor.pq.mtk_dre30_support=0
+ro.vendor.mtk_hdr_video_support=0
 ro.vendor.pref_scale_enable_cfg=1
 vendor.mtk.vdec.waitkeyframeforplay=15
 media.c2.dmabuf.padding=3072

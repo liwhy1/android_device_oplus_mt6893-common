@@ -20,21 +20,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-        name: "libutils-v31",
-        strip: {
-                none: true,
-        },
-        target: {
-                android_arm64: {
-                        srcs: ["libutils-v31.so"],
-                },
-        },
-        compile_multilib: "64",
-        check_elf_files: false,
-        vendor: true,
-}
-
-cc_prebuilt_library_shared {
 	name: "libssl-v32",
 	strip: {
 		none: true,
@@ -80,21 +65,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-        name: "libutils_v32",
-        strip: {
-                none: true,
-        },
-        target: {
-                android_arm64: {
-                        srcs: ["libutils-v32.so"],
-                },
-        },
-        compile_multilib: "64",
-        check_elf_files: false,
-        vendor: true,
-}
-
-cc_prebuilt_library_shared {
         name: "libstagefright_foundation_v33",
         strip: {
                 none: true,
@@ -105,6 +75,24 @@ cc_prebuilt_library_shared {
                 },
                 android_arm64: {
                         srcs: ["arm64/libstagefright_foundation-v33.so"],
+                },
+        },
+        compile_multilib: "both",
+        check_elf_files: false,
+        vendor: true,
+}
+
+cc_prebuilt_library_shared {
+        name: "libtinyalsa-v32",
+        strip: {
+                none: true,
+        },
+        target: {
+                android_arm: {
+                        srcs: ["arm/libtinyalsa-v32.so"],
+                },
+                android_arm64: {
+                        srcs: ["arm64/libtinyalsa-v32.so"],
                 },
         },
         compile_multilib: "both",

@@ -109,6 +109,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/aurisys/aurisys_config.xml:$(TARGET_COPY_OUT_ODM)/etc/audio/aurisys_config/aurisys_config.xml \
     $(COMMON_PATH)/configs/aurisys/aurisys_config_hifi3.xml:$(TARGET_COPY_OUT_ODM)/etc/audio/aurisys_config_hifi3/aurisys_config_hifi3.xml
 
+TARGET_EXCLUDES_AUDIOFX := true
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor:64 \
@@ -151,6 +153,10 @@ PRODUCT_PACKAGES += \
     vndservicemanager \
     libion.vendor \
     libui.vendor
+
+# Display saturation adjust
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.sys.sf.color_saturation?=1.37
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -211,6 +217,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
    android.hardware.health@2.1-service \
    android.hardware.health@2.1-impl
+
+# Lineage Health
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/devices/virtual/oplus_chg/battery/mmi_charging_enable)
+$(call soong_config_set,lineage_health,charging_control_supports_bypass,true)
+
+# UDFPS
+$(call soong_config_set,surfaceflinger,udfps_lib,//$(COMMON_PATH):libudfps_extension.mt6893)
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -278,6 +291,7 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
     android.hardware.nfc@1.2-service \
     com.android.nfc_extras \
+    SecureElement \
     Tag
 
 PRODUCT_COPY_FILES += \
@@ -300,8 +314,6 @@ PRODUCT_PACKAGES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml \
-    $(COMMON_PATH)/configs/permissions/privapp-permissions-oplus.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-oplus.xml \
-    $(COMMON_PATH)/configs/permissions/privapp-permissions-oplus.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-oplus.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -337,7 +349,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.software.ipsec_tunnel_migration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnel_migration.xml \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml \
@@ -460,8 +471,7 @@ PRODUCT_BOOT_JARS += \
     mediatek-ims-common \
     mediatek-telecom-common \
     mediatek-telephony-base \
-    mediatek-telephony-common \
-    oplus-support-wrapper
+    mediatek-telephony-common
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -480,12 +490,11 @@ PRODUCT_PACKAGES += \
 # VNDK
 PRODUCT_PACKAGES += \
     libcrypto-v32 \
-    libutils-v31 \
     libssl-v32 \
     libbinder_v32 \
     libhidlbase_v32 \
-    libutils_v32 \
-    libstagefright_foundation_v33
+    libstagefright_foundation_v33 \
+    libtinyalsa-v32
 
 # WiFi
 PRODUCT_PACKAGES += \
@@ -524,19 +533,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libshim_ui \
+    libbase_shim \
+    libprocessgroup_shim \
     libshim
-
-# Oplus Camera
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/camera/oplus_camera_config:$(TARGET_COPY_OUT_ODM)/etc/camera/config/oplus_camera_config \
-    $(COMMON_PATH)/configs/permissions/com.oplus.camera.unit.sdk_product.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.oplus.camera.unit.sdk_product.xml \
-    $(COMMON_PATH)/configs/permissions/oplus_camera_default_grant_permissions_list.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/oplus_camera_default_grant_permissions_list.xml \
-    $(COMMON_PATH)/configs/permissions/APU_SYS.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/APU_SYS.xml \
-    $(COMMON_PATH)/configs/sysconfig/hiddenapi-package-whitelist-oplus-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hiddenapi-package-whitelist-oplus-system.xml
-
-# ORMS
-PRODUCT_PACKAGES += \
-    orms_core_config
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/oplus/mt6893-common/mt6893-common-vendor.mk)

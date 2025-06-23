@@ -27,7 +27,7 @@ if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ANDROID_ROOT="${MY_DIR}"/../../..
 
-HELPER="${ANDROID_ROOT}/tools/extract-utils-old/extract_utils.sh"
+HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -37,9 +37,13 @@ source "${HELPER}"
 function blob_fixup {
     case "$1" in
         vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service)
-            "$PATCHELF" --replace-needed libutils.so libutils-v31.so "$2"
+            "$PATCHELF" --replace-needed libutils.so libutils_v32.so "$2"
             "$PATCHELF" --replace-needed libhidlbase.so libhidlbase_v32.so "$2"
             ;;
+        vendor/lib*/hw/audio.primary.mt6893.so)
+             "${PATCHELF}" --replace-needed "libalsautils.so" "libalsautils-v31.so" "${2}"
+             "${PATCHELF}" --replace-needed "libtinyalsa.so" "libtinyalsa-v32.so" "${2}"
+             ;;
         vendor/bin/hw/android.hardware.media.c2@1.2-mediatek|vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
 	    [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libcodec2_hidl@1.0.so" "${2}"
@@ -86,6 +90,12 @@ function blob_fixup {
         vendor/lib/libcodec2_vndk-mtk.so)
             grep -q libshim_ui.so "$2" || "$PATCHELF" --add-needed libshim_ui.so "$2"
             ;;
+        vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron|vendor/lib*/libnvram.so|odm/bin/hw/vendor.oplus.hardware.charger@1.0-service|vendor/lib64/libsysenv.so)
+             grep -q "libbase_shim.so" "${2}" || "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
+             ;;
+        vendor/lib64/hw/hwcomposer.mt6893.so|vendor/lib64/libutils_v32.so)
+             grep -q "libprocessgroup_shim.so" "${2}" || "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
+            ;;
     esac
 }
 
@@ -96,6 +106,7 @@ SECTION=
 KANG=
 
 while [ "${#}" -gt 0 ]; do
+sed -i -E '/^[^#[:space:]]/ s|;?DISABLE_DEPS||g; /^[^#[:space:]]/ { /[.]apk/! s|([^;|[:space:]]+)(\|.*)?|\1;DISABLE_DEPS\2| }' "${MY_DIR}/proprietary-files.txt"
     case "${1}" in
         -n | --no-cleanup )
                 CLEAN_VENDOR=false
@@ -125,3 +136,5 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
         "${KANG}" --section "${SECTION}"
 
 bash "${MY_DIR}/setup-makefiles.sh"
+
+sed -i -E 's|;?DISABLE_DEPS||g' "${MY_DIR}/proprietary-files.txt"

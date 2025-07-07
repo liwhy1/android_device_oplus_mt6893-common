@@ -141,3 +141,11 @@ persist.sys.usb.config=mtp,adb
 persist.camera.HAL3.enabled=1
 persist.camera.eis.enabled=1
 ro.camera.sound.forced=0
+
+#OIS
+persist.camera.gyro.android=20
+persist.camera.is_type=4
+persist.camera.ois.enable=1
+persist.camera.ois.video=1
+persist.vendor.camera.ois.enable=1
+persist.vendor.camera.ois.video=1

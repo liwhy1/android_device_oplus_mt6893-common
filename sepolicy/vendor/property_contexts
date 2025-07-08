@@ -7,6 +7,10 @@ persist.vendor.fp.                                              u:object_r:vendo
 vendor.flash.locked                                             u:object_r:vendor_fingerprint_prop:s0
 vendor.fingerprint.                                             u:object_r:vendor_fingerprint_prop:s0
 
+# Camera
+vendor.debug.cameralog.enable                                   u:object_r:vendor_oplus_prop:s0
+vendor.debug.tpi.                                               u:object_r:vendor_oplus_prop:s0
+
 # PQ
 ro.vendor.mtk_hdr_video_support                                 u:object_r:vendor_mtk_pq_ro_prop:s0
 

@@ -84,7 +84,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.0.vendor \
     android.hardware.soundtrigger@2.3-impl:32 \
     audio.bluetooth.default \
-    audio.primary.default:64 \
     libaudiofoundation.vendor \
     libbluetooth_audio_session \
     libalsautils \

@@ -7,6 +7,7 @@ demo.fb                                          u:object_r:exported_system_prop
 oplus.CTP.Tunningmode                            u:object_r:exported_system_prop:s0
 oplus.debug.nvram.enable                         u:object_r:exported_system_prop:s0
 persist.bps.debug                                u:object_r:exported_system_prop:s0
+persist.camera.                                  u:object_r:exported_system_prop:s0
 persist.sys.camera.log.                          u:object_r:exported_system_prop:s0
 persist.vendor.aps.debug.framenum                u:object_r:exported_system_prop:s0
 persist.vendor.arcsoft.sn.dumprawinfo            u:object_r:exported_system_prop:s0
@@ -18,6 +19,7 @@ ro.oplus.                                        u:object_r:exported_system_prop
 ro.vendor.gfx.32bit.target                       u:object_r:exported_system_prop:s0
 ro.vendor.oplus.                                 u:object_r:exported_system_prop:s0
 sys.oppo_ftm_mode                                u:object_r:exported_system_prop:s0
+vendor.aps.                                      u:object_r:exported_system_prop:s0
 vendor.arcsoft.                                  u:object_r:exported_system_prop:s0
 vendor.debug.is.rioapk                           u:object_r:exported_system_prop:s0
 vendor.debug.magnet.enable                       u:object_r:exported_system_prop:s0

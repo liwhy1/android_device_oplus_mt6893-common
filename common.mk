@@ -494,7 +494,6 @@ PRODUCT_PACKAGES += \
     libhidlbase_v32 \
     libstagefright_foundation_v33 \
     libtinyalsa-v32 \
-    libutils-shim \
     libutils-v32 \
     libutils-v32.transsion
 

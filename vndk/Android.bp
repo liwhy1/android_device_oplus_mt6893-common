@@ -100,6 +100,21 @@ cc_prebuilt_library_shared {
         vendor: true,
 }
 
+cc_prebuilt_library_shared {
+    name: "libutils-v32.transsion",
+    vendor: true,
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["libutils/libutils-v32.transsion.so"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+}
+
 cc_library_shared {
         name: "libutils-shim",
         shared_libs: ["libutils-v32.transsion"],
